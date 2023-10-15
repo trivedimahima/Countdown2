@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript countdown Timer</title>
+    <link rel="stylesheet " href="style.css">
+</head>
+<body>
+   
+
+    <div>
+       <div class="box"> 
+        <h1>DUSSEHRA</h1>
+        <h2>COUNTDOWN BEGINS</h2>
+        <p id="demo"> </p>
+       </div>
+</div>
+    <script>
+        var dest = new Date('oct  25  2023  00:00:00').getTime();
+var x = setInterval(function(){
+        var now = new Date().getTime();
+        var diff = dest - now;
+        var days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        console.log(days);
+        var hours = Math.floor((diff % (1000 * 60 * 60 * 24))/(1000 * 60 * 60));
+        console.log(hours);
+         var minutes = Math.floor((diff % (1000 * 60 * 60 )) / (1000 * 60 )); 
+         console.log(minutes);
+        var seconds = Math.floor((diff % (1000 * 60)) /1000);
+        console.log(seconds);
+        document.getElementById("demo").innerHTML = days +"d," + hours + "hrs:" + minutes +"m:"+ seconds + "s"
+    },1000);
+    </script>
+
+</body>
+</html>
